@@ -1,0 +1,15 @@
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    b=p.chromium.launch(args=["--no-sandbox"])
+    pg=b.new_page(viewport={"width":390,"height":844}, device_scale_factor=2, is_mobile=True, has_touch=True)
+    pg.goto("http://localhost:8099/index.html", wait_until="networkidle", timeout=45000)
+    pg.wait_for_timeout(3000)
+    pg.screenshot(path="/tmp/mobile-hero.png")
+    pg.goto("http://localhost:8099/quote.html", wait_until="networkidle")
+    pg.wait_for_timeout(1500)
+    pg.screenshot(path="/tmp/mobile-quote.png")
+    pg.goto("http://localhost:8099/gallery.html", wait_until="networkidle")
+    pg.wait_for_timeout(1500)
+    pg.screenshot(path="/tmp/mobile-gallery.png")
+    print("ok")
+    b.close()

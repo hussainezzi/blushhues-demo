@@ -55,18 +55,33 @@ if (canvas && !reduce) {
   const COUNT = isMobile ? 26 : 52;
 
   const petals = [];
-  const geo = new THREE.PlaneGeometry(0.7, 0.95, 1, 1);
+  /* a gently curved petal — real shading instead of a flat card */
+  const geo = new THREE.PlaneGeometry(0.7, 0.95, 10, 12);
+  {
+    const pos = geo.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      const y = pos.getY(i);
+      const u = x / 0.35;           // -1..1 across
+      const v = y / 0.475;          // -1..1 along
+      const cup = (1 - u * u) * 0.16;          // gentle cup
+      const curl = Math.pow(Math.abs(v), 2) * 0.18 * Math.sign(v); // tip bend
+      pos.setZ(i, cup - curl + Math.sin(u * Math.PI) * 0.03);
+    }
+    geo.computeVertexNormals();
+  }
 
   for (let i = 0; i < COUNT; i++) {
     const mat = new THREE.MeshStandardMaterial({
       map: tex,
       color: palette[i % palette.length],
       transparent: true,
-      opacity: 0.55 + Math.random() * 0.4,
-      roughness: 0.95,
+      opacity: i % 5 === 0 ? 0.95 : 0.55 + Math.random() * 0.3,
+      roughness: 0.72,
       metalness: 0,
       side: THREE.DoubleSide,
       depthWrite: false,
+      flatShading: false,
     });
     const mesh = new THREE.Mesh(geo, mat);
     mesh.position.set(
@@ -81,6 +96,7 @@ if (canvas && !reduce) {
       phase: Math.random() * Math.PI * 2,
       spin: (Math.random() - 0.5) * 0.35,
       scale: 0.55 + Math.random() * 0.85,
+      tilt: Math.random() * Math.PI * 2,
     };
     mesh.scale.setScalar(mesh.userData.scale);
     scene.add(mesh);
@@ -89,7 +105,7 @@ if (canvas && !reduce) {
 
   /* bokeh glow points */
   const glowGeo = new THREE.BufferGeometry();
-  const glowCount = isMobile ? 40 : 90;
+  const glowCount = isMobile ? 26 : 54;
   const pos = new Float32Array(glowCount * 3);
   for (let i = 0; i < glowCount; i++) {
     pos[i * 3] = (Math.random() - 0.5) * 22;
@@ -112,23 +128,26 @@ if (canvas && !reduce) {
     return new THREE.CanvasTexture(c);
   }
   const glowMat = new THREE.PointsMaterial({
-    size: 1.5,
+    size: 1.15,
     map: glowTexture(),
     transparent: true,
-    opacity: 0.55,
+    opacity: 0.24,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
   });
   const glow = new THREE.Points(glowGeo, glowMat);
   scene.add(glow);
 
-  scene.add(new THREE.AmbientLight(0xfff3ee, 1.7));
-  const key = new THREE.DirectionalLight(0xffe8e0, 1.7);
+  scene.add(new THREE.AmbientLight(0xfff3ee, 1.25));
+  const key = new THREE.DirectionalLight(0xfff0e8, 2.4);
   key.position.set(4, 6, 7);
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xffd9d0, 1.0);
+  const rim = new THREE.DirectionalLight(0xffc9bd, 1.4);
   rim.position.set(-6, -3, 3);
   scene.add(rim);
+  const fill = new THREE.DirectionalLight(0xffffff, 0.5);
+  fill.position.set(0, -4, 6);
+  scene.add(fill);
 
   /* sizing */
   let w = 0, h = 0;
@@ -177,6 +196,7 @@ if (canvas && !reduce) {
       p.position.x += Math.sin(elapsed * 0.6 + d.phase) * d.sway * dt * 0.35;
       p.rotation.z += d.spin * dt;
       p.rotation.x += d.spin * dt * 0.4;
+      p.rotation.y = Math.sin(elapsed * 0.35 + d.tilt) * 0.9;
       if (p.position.y < -8) {
         p.position.y = 8;
         p.position.x = (Math.random() - 0.5) * 18;
