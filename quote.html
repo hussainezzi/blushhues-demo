@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a Quote — Blush Hues Event Decor</title>
+<meta name="description" content="Request a personalised event decor quote from Blush Hues — weddings, bridal showers, baby showers and birthdays across Toronto and the GTA.">
+<meta name="theme-color" content="#FDF5F1">
+<link rel="icon" href="assets/img/logo-180.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="assets/img/logo.jpg" alt="Blush Hues event decor logo">
+      <span class="brand__text"><span class="brand__name">Blush Hues</span><span class="brand__sub">Event Decor · By Mariam</span></span>
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="quote.html" class="btn btn--primary btn--sm nav__cta">Get a Quote</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <img class="mobile-menu__logo" src="assets/img/logo.jpg" alt="">
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="index.html#about">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="quote.html" class="btn btn--primary">Get a Quote</a>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="script">A quote made for you</span>
+      <h1>Get a Quote</h1>
+      <p class="lede">Three short steps — the occasion, the details and how to reach you. Mariam will come back with ideas, availability and pricing.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap quote-grid">
+      <div class="form-card reveal">
+        <div class="steps-bar" aria-hidden="true">
+          <div class="step-dot done" data-dot="0"><i></i></div>
+          <div class="step-dot" data-dot="1"><i></i></div>
+          <div class="step-dot" data-dot="2"><i></i></div>
+        </div>
+
+        <form id="quoteForm" data-demo novalidate>
+          <!-- STEP 1 -->
+          <div class="form-step active" data-step="0">
+            <h3>What are we celebrating?</h3>
+            <div class="chip-grid" id="typeChips">
+              <button type="button" class="chip" data-value="Wedding">Wedding<small>Stages &amp; florals</small></button>
+              <button type="button" class="chip" data-value="Bridal shower">Bridal shower<small>Soft &amp; sweet</small></button>
+              <button type="button" class="chip" data-value="Baby shower">Baby shower<small>Pastel &amp; gentle</small></button>
+              <button type="button" class="chip" data-value="Birthday">Birthday<small>Balloons &amp; fun</small></button>
+              <button type="button" class="chip" data-value="Other celebration">Other<small>Tell us more</small></button>
+            </div>
+            <div class="step-nav">
+              <span></span>
+              <button type="button" class="btn btn--primary" data-next disabled>Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step" data-step="1">
+            <h3>The details</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="qdate">Event date</label>
+                <input id="qdate" name="date" type="date">
+              </div>
+              <div class="field">
+                <label for="qguests">Approx. guests</label>
+                <input id="qguests" name="guests" type="number" min="1" placeholder="e.g. 80">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="qvenue">Venue or city</label>
+                <input id="qvenue" name="venue" type="text" placeholder="Venue name, or city">
+              </div>
+              <div class="field">
+                <label for="qbudget">Budget range</label>
+                <select id="qbudget" name="budget">
+                  <option value="" selected disabled>Choose a range</option>
+                  <option>Under $500</option>
+                  <option>$500 – $1,500</option>
+                  <option>$1,500 – $3,000</option>
+                  <option>$3,000 – $6,000</option>
+                  <option>$6,000+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="qstyle">Colours or style you love <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+              <input id="qstyle" name="style" type="text" placeholder="Blush, ivory, gold… garden roses, balloons, drapes…">
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn--ghost" data-back>Back</button>
+              <button type="button" class="btn btn--primary" data-next>Continue</button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step" data-step="2">
+            <h3>How can we reach you?</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="qname">Your name</label>
+                <input id="qname" name="name" type="text" required placeholder="Full name">
+              </div>
+              <div class="field">
+                <label for="qcontact">Phone or email</label>
+                <input id="qcontact" name="contact" type="text" required placeholder="Phone or email">
+              </div>
+            </div>
+            <div class="field">
+              <label for="qnotes">Anything else?</label>
+              <textarea id="qnotes" name="notes" placeholder="Inspiration, must-haves, questions…"></textarea>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn--ghost" data-back>Back</button>
+              <button type="submit" class="btn btn--primary">Request My Quote</button>
+            </div>
+            <p class="form-fine">This is a demo site — nothing is sent yet.</p>
+          </div>
+        </form>
+
+        <div class="form-success">
+          <div class="tick">✦</div>
+          <h3>Your request is ready</h3>
+          <p>This demo quote form doesn't send yet.<br>For a real quote, please DM <a href="https://www.instagram.com/blushhuesdecor" target="_blank" rel="noopener" style="color:var(--rose-deep)">@blushhuesdecor</a> with your details.</p>
+        </div>
+      </div>
+
+      <!-- LIVE SUMMARY -->
+      <aside class="summary reveal d1">
+        <img class="summary__logo" src="assets/img/logo.jpg" alt="Blush Hues">
+        <h3>Your celebration</h3>
+        <p class="summary__sub">A little preview</p>
+        <div class="summary__row"><span>Occasion</span><span id="sType">Not chosen</span></div>
+        <div class="summary__row"><span>Date</span><span id="sDate">Not chosen</span></div>
+        <div class="summary__row"><span>Guests</span><span id="sGuests">Not chosen</span></div>
+        <div class="summary__row"><span>Venue</span><span id="sVenue">Not chosen</span></div>
+        <div class="summary__row"><span>Budget</span><span id="sBudget">Not chosen</span></div>
+        <p class="summary__quote">“Every celebration deserves its own shade of pretty.”</p>
+        <p class="summary__note">Quotes are tailored to your venue, guest count and the scale of the setup. Nothing is booked until you confirm.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="brand" href="index.html">
+          <img class="brand__logo" src="assets/img/logo.jpg" alt="Blush Hues logo">
+          <span class="brand__text"><span class="brand__name">Blush Hues</span><span class="brand__sub">Event Decor · By Mariam</span></span>
+        </a>
+        <p style="margin-top:18px">Soft, romantic event decor for weddings, bridal showers, baby showers and birthdays across Toronto and the GTA.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/blushhuesdecor" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2.1a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="index.html">Home</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="index.html#about">About</a></li><li><a href="quote.html">Get a Quote</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul><li><a href="index.html#about">Weddings</a></li><li><a href="index.html#about">Bridal Showers</a></li><li><a href="index.html#about">Baby Showers</a></li><li><a href="index.html#about">Birthdays</a></li></ul>
+      </div>
+      <div>
+        <h5>Service Area</h5>
+        <ul><li>Toronto</li><li>Mississauga</li><li>Brampton</li><li>Milton &amp; Oakville</li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Blush Hues Event Decor. All rights reserved.</span>
+      <span>Website demo · crafted with care</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  const form = document.getElementById("quoteForm");
+  if (!form) return;
+  const steps = Array.from(form.querySelectorAll(".form-step"));
+  const dots = Array.from(document.querySelectorAll(".step-dot"));
+  let current = 0;
+  const state = { type: "", date: "", guests: "", venue: "", budget: "" };
+
+  const fmtDate = (v) => {
+    if (!v) return "";
+    const d = new Date(v + "T12:00:00");
+    return d.toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" });
+  };
+
+  function paint() {
+    document.getElementById("sType").textContent = state.type || "Not chosen";
+    document.getElementById("sDate").textContent = fmtDate(state.date) || "Not chosen";
+    document.getElementById("sGuests").textContent = state.guests ? state.guests + " guests" : "Not chosen";
+    document.getElementById("sVenue").textContent = state.venue || "Not chosen";
+    document.getElementById("sBudget").textContent = state.budget || "Not chosen";
+  }
+
+  function go(i) {
+    current = Math.max(0, Math.min(steps.length - 1, i));
+    steps.forEach((s, n) => s.classList.toggle("active", n === current));
+    dots.forEach((d, n) => {
+      d.classList.toggle("active", n === current);
+      d.classList.toggle("done", n < current);
+    });
+    document.querySelector(".quote-grid").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  document.querySelectorAll("#typeChips .chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll("#typeChips .chip").forEach((c) => c.classList.remove("selected"));
+      chip.classList.add("selected");
+      state.type = chip.dataset.value;
+      const next = form.querySelector('[data-step="0"] [data-next]');
+      next.disabled = false;
+      paint();
+    });
+  });
+
+  form.querySelectorAll("[data-next]").forEach((b) =>
+    b.addEventListener("click", () => {
+      if (current === 0 && !state.type) return;
+      go(current + 1);
+    })
+  );
+  form.querySelectorAll("[data-back]").forEach((b) =>
+    b.addEventListener("click", () => go(current - 1))
+  );
+
+  const dateEl = document.getElementById("qdate");
+  const guestsEl = document.getElementById("qguests");
+  const venueEl = document.getElementById("qvenue");
+  const budgetEl = document.getElementById("qbudget");
+  const styleEl = document.getElementById("qstyle");
+
+  dateEl.addEventListener("change", () => { state.date = dateEl.value; paint(); });
+  guestsEl.addEventListener("input", () => { state.guests = guestsEl.value; paint(); });
+  venueEl.addEventListener("input", () => { state.venue = venueEl.value; paint(); });
+  budgetEl.addEventListener("change", () => { state.budget = budgetEl.value; paint(); });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    paint();
+    const success = form.parentElement.querySelector(".form-success");
+    form.style.display = "none";
+    document.querySelector(".steps-bar").style.display = "none";
+    document.querySelector(".summary").innerHTML =
+      '<img class="summary__logo" src="assets/img/logo.jpg" alt="">' +
+      "<h3>Your celebration</h3><p class=\"summary__sub\">Request summary</p>" +
+      '<div class="summary__row"><span>Occasion</span><span>' + (state.type || "—") + "</span></div>" +
+      '<div class="summary__row"><span>Date</span><span>' + (fmtDate(state.date) || "—") + "</span></div>" +
+      '<div class="summary__row"><span>Guests</span><span>' + (state.guests || "—") + "</span></div>" +
+      '<div class="summary__row"><span>Venue</span><span>' + (state.venue || "—") + "</span></div>" +
+      '<div class="summary__row"><span>Budget</span><span>' + (state.budget || "—") + "</span></div>" +
+      '<div class="summary__row"><span>Style</span><span>' + (styleEl.value || "—") + "</span></div>" +
+      '<p class="summary__quote">“Thank you — this is exactly the kind of celebration we love.”</p>';
+    success.classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
