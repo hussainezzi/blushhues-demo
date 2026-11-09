@@ -12,7 +12,7 @@
     wedding: "Soft florals, candlelight and tables set for the people you love.",
     misaaq: "An intimate nikkah — blush, gold and quiet detail.",
     birthday: "Balloons, backdrops and cake-table styling for the big day.",
-    "baby-shower": "Pastel welcomes for the smallest guest of honour.",
+    "baby-showers": "Pastel welcomes for the smallest guest of honour.",
   };
 
   let data = [];
