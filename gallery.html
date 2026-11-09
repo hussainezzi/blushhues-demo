@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/gallery.css">
 </head>
 <body>
 
@@ -51,48 +52,9 @@
 
   <section class="section" style="padding-top:10px">
     <div class="wrap">
-      <div class="gallery-grid--page">
-        <figure class="gitem reveal" data-lightbox>
-          <img src="assets/img/decor-13.jpg" alt="Floral arch and welcome sign for a celebration">
-          <span class="gitem__label">Arches &amp; Entrances</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d1" data-lightbox>
-          <img src="assets/img/decor-10.jpg" alt="Blush drapery and floral clusters along a staircase">
-          <span class="gitem__label">Staircase Styling</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d2" data-lightbox>
-          <img src="assets/img/decor-12.jpg" alt="Pastel birthday backdrop with balloon arch">
-          <span class="gitem__label">Birthday Backdrops</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal" data-lightbox>
-          <img src="assets/img/decor-6.jpg" alt="Blush Hues event decor detail">
-          <span class="gitem__label">Styled Details</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d1" data-lightbox>
-          <img src="assets/img/decor-5.jpg" alt="Blush Hues event decor setup">
-          <span class="gitem__label">Celebration Setups</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d2" data-lightbox>
-          <img src="assets/img/decor-4.jpg" alt="Blush Hues floral decor">
-          <span class="gitem__label">Florals</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal" data-lightbox>
-          <img src="assets/img/decor-7.jpg" alt="Blush Hues event styling">
-          <span class="gitem__label">Tablescapes</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d1" data-lightbox>
-          <img src="assets/img/decor-8.jpg" alt="Blush Hues decor installation">
-          <span class="gitem__label">Installations</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal d2" data-lightbox>
-          <img src="assets/img/decor-14.jpg" alt="Chandelier and drapery detail">
-          <span class="gitem__label">Light &amp; Drape</span><span class="gitem__plus">+</span>
-        </figure>
-        <figure class="gitem reveal" data-lightbox>
-          <img src="assets/img/decor-9.jpg" alt="Blush Hues celebration decor">
-          <span class="gitem__label">The Finishing Touches</span><span class="gitem__plus">+</span>
-        </figure>
-      </div>
+      <div class="filter-bar" id="filters" aria-label="Gallery categories"></div>
+      <p class="gallery-intro" id="galleryIntro"></p>
+      <div class="masonry" id="galleryGrid"></div>
       <p style="text-align:center;color:var(--muted);font-size:.82rem;margin-top:34px">More moments live on <a href="https://www.instagram.com/blushhuesdecor" target="_blank" rel="noopener" style="color:var(--rose-deep);border-bottom:1px solid rgba(156,92,87,.35)">Instagram @blushhuesdecor</a></p>
     </div>
   </section>
@@ -144,14 +106,7 @@
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lb-btn lb-close" aria-label="Close">✕</button>
-  <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
-  <img src="" alt="">
-  <button class="lb-btn lb-next" aria-label="Next">›</button>
-  <span class="lb-count"></span>
-</div>
-
 <script src="assets/js/main.js"></script>
+<script src="assets/js/gallery.js"></script>
 </body>
 </html>
