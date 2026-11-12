@@ -136,8 +136,8 @@ body.menu-open .burger span:nth-child(2){top:22px;transform:rotate(-45deg)}
   opacity:0;pointer-events:none;transition:opacity .45s var(--ease);
 }
 body.menu-open .mobile-menu{opacity:1;pointer-events:auto}
-.mobile-menu a{font-family:var(--serif);font-size:2rem;padding:10px 0;opacity:.9}
-.mobile-menu .btn{margin-top:26px}
+.mobile-menu > a{font-family:var(--serif);font-size:2rem;padding:10px 0;opacity:.9}
+.mobile-menu .btn{margin-top:26px;font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;padding:14px 30px;display:inline-flex}
 .mobile-menu__logo{width:74px;height:74px;border-radius:50%;margin-bottom:26px}
 
 /* ---------------- Hero ---------------- */
