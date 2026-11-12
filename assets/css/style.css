@@ -159,8 +159,8 @@ body.menu-open .mobile-menu{opacity:1;pointer-events:auto}
 .hero__kicker{display:flex;align-items:center;gap:14px;margin-bottom:22px;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rose-deep)}
 .hero__kicker::before{content:"";width:44px;height:1px;background:var(--rose)}
 .hero h1{font-weight:300;letter-spacing:-.015em}
-.hero h1 em{font-style:italic;color:var(--rose-deep)}
-.hero__script{font-family:var(--script);font-size:clamp(1.55rem,2.5vw,2.15rem);color:var(--rose-deep);line-height:1;margin-bottom:8px;display:block;opacity:.95}
+.hero h1 em{font-style:normal;color:var(--rose-deep)}
+.hero__script{font-family:var(--script);font-size:clamp(1.55rem,2.5vw,2.15rem);color:var(--rose-deep);line-height:1;margin:14px 0 0;display:block;opacity:.95}
 .hero__text{color:#6B5557;margin:24px 0 32px;max-width:44ch}
 .hero__actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .hero__trust{display:flex;align-items:center;gap:16px;margin-top:32px;color:#635052;font-size:.82rem;letter-spacing:.05em}
